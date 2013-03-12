@@ -68,6 +68,7 @@
 ;; https://raw.github.com/mooz/js2-mode/master/js2-mode.el
 (when (autoload 'js2-mode "js2-mode" nil t)
   (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode)))
+(setq-default c-basic-offset 2)
 ;; ------------------------------------------------------------------------
 ;; @ general
 ;; common lisp
@@ -111,7 +112,7 @@
 ;; use space as tab
 (setq-default indent-tabs-mode nil)
 ;; tab width
-(custom-set-variables '(tab-width 4))
+(custom-set-variables '(tab-width 2))
 ;; yes or no -> y or n
 (fset 'yes-or-no-p 'y-or-n-p)
 ;; recent file
