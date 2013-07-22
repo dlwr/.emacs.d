@@ -23,10 +23,13 @@
 ; melpa.el
 (require 'melpa)
 ;; redo+.el
-(when (require 'redo+ nil t)
-  (define-key global-map (kbd "C-_") 'redo)
-  (define-key global-map (kbd "C-\\") 'undo))
+;; (when (require 'redo+ nil t)
+;;   (define-key global-map (kbd "C-_") 'redo)
+;;   (define-key global-map (kbd "C-\\") 'undo))
 ;; http://www.emacswiki.org/emacs/multi-term.el
+(require 'undo-tree)
+(global-undo-tree-mode t)
+(global-set-key (kbd "M-/") 'undo-tree-redo)
 (when (require 'multi-term nil t)
   (setq multi-term-program "/bin/zsh"))
 ;; 自動補完機能
@@ -154,7 +157,7 @@
 (require 'dired-x)
 ;;; diredから"r"でファイル名をインライン編集する
 (require 'wdired)
-(define-key dired-mode-map "r" 'wdired-change-to-wdired-mode)
+;; (define-key dired-mode-map "r" 'wdired-change-to-wdired-mode)
 ;;; 現在の関数名をウィンドウ上部に表示する。
 ;; 2011-03-15
 (which-function-mode 1)
