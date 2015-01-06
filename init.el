@@ -30,30 +30,14 @@
 (require 'undo-tree)
 (global-undo-tree-mode t)
 (global-set-key (kbd "M-/") 'undo-tree-redo)
-(when (require 'multi-term nil t)
-  (setq multi-term-program "/bin/zsh"))
+;; (when (require 'multi-term nil t)
+;;   (setq multi-term-program "/bin/zsh"))
 ;; 自動補完機能
 ;; https://github.com/m2ym/auto-complete
 (when (require 'auto-complete-config nil t)
   (add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
   (setq ac-ignore-case t)
   (ac-config-default))
-;; ブロックの折畳みと展開
-;; http://www.dur.ac.uk/p.j.heslin/Software/Emacs/Download/fold-dwim.el
-(when (require 'fold-dwim nil t)
-  (require 'hideshow nil t)
-  ;; 機能を利用するメジャーモード一覧
-  (let ((hook))
-    (dolist (hook
-             '(emacs-lisp-mode-hook
-               c-mode-common-hook
-               python-mode-hook
-               php-mode-hook
-               ruby-mode-hook
-               js2-mode-hook
-               css-mode-hook
-               apples-mode-hook))
-      (add-hook hook 'hs-minor-mode))))
 ;; バッファの検索結果をリストアップ(複数バッファ可)
 ;; http://www.emacswiki.org/emacs/color-moccur.el
 ;; http://www.emacswiki.org/emacs/moccur-edit.el
@@ -233,3 +217,5 @@
                               t " Keyjack" my-keyjack-mode-map)
 
 (define-key global-map (kbd "C-x b") 'anything)
+
+(set-frame-font "ricty-12")
