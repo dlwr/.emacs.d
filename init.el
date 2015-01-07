@@ -219,3 +219,5 @@
 (define-key global-map (kbd "C-x b") 'anything)
 
 (set-frame-font "ricty-12")
+
+(setq ruby-insert-encoding-magic-comment nil)
